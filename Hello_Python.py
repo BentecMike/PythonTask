@@ -108,7 +108,7 @@
 
 ## for  for i in enumeration
 
-#for i in 1,2,3,4:
+# for i in 1,2,3,4:
 #    print(i**2)
 
 #list = [1, 3, 5, 2, 7]
