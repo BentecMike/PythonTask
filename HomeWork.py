@@ -122,6 +122,17 @@
 
 # 18. Проверить истинность утверждения ¬(X ⋁ Y) = ¬X ⋀ ¬Y
 
+# for x in range(0,2):
+#     for y in range(0,2):
+#         print(not(x or y) == (not(x) and not(y)))
+
+
+#         if not(x or y) == (not(x) and not(y)):
+#             print(f'При Х = {x} Y = {y} истинно')
+#         else:
+#             print(f'При Х = {x} Y = {y} ложно')
+
+
 
 
 # 19. Определить номер четверти плоскости, в которой находится точка с координатами Х и У, причем X ≠ 0 и Y ≠ 0
@@ -145,14 +156,7 @@
 # a = int(input('введите номер плоскости = '))
 # list = ['x,y > 0', 'x < 0, y > 0', 'x,y < 0', 'x > 0, y < 0']
 # if 0 < a < 5:
-#     if a == 1:
-#         print(list[0])
-#     elif a == 2:
-#         print(list[1])
-#     elif a == 3:
-#         print(list[2])
-#     else:
-#         print(list[3])
+#       print(list[a - 1])    
 # else:
 #     print('введите номер четверти в диапазоне [1-4]')
 
@@ -213,7 +217,7 @@
 # 23. Показать таблицу квадратов чисел от 1 до N
 
 # n = int(input('Enter N: '))
-# list = range(n)
+# list = range(1, n+1)
 # for i in list: 
 #     print('N = {} - N^2 = {}'.format(list[i], list[i]**2))
 
@@ -223,7 +227,7 @@
 # 24. Найти кубы чисел от 1 до N
 
 # n = int(input('Enter N: '))
-# list = range(n+1)
+# list = range(1, n+1)
 # for i in list: 
 #     print('N = {} - N^3 = {}'.format(list[i], list[i]**3))
 
@@ -237,7 +241,7 @@
 # print(type(lits))
 # sum = 0
 # for i in lits: 
-#     sum = i + sum
+#     sum += i
 #     print('Sum = {} + {} = {}'.format(i, sum, sum))
 
 
@@ -247,10 +251,13 @@
 
 # a = int(input('Enter A: '))
 # b = int(input('Enter ^b: '))
-# i, res = 1, 1
-# while i <= b:
-#     res = a*res
-#     i+=1
+# res = 1
+# for i in range(b):
+#     res *=a
+# # i, res = 1, 1
+# # while i <= b:
+# #     res *= a
+# #     i+=1
 # print('{}^{} = {}'.format(a, b, res))
 
 
@@ -271,6 +278,13 @@
 #     sum = sum + a % 10
 #     a = a // 10 
 # print(sum)
+
+
+# a = input('a = ')
+# res = 0
+# for i in range(len(a)):
+#     res = res + int(a[i])
+# print(res)
 
 
 
@@ -301,15 +315,142 @@
 
 
 # 31. Задать массив из 8 элементов и вывести их на экран
+
+# lis = range(8)
+# lit = list(lis) 
+# print(lit)
+
+
+
+
 # 32. Задать массив из 8 элементов, заполненных нулями и единицами вывести их на экран
+
+# lis = [0, 1] * 4
+# print(lis)
+
+
+
+
 # 33. Задать массив из 12 элементов, заполненных числами из [0,9]. Найти сумму положительных/отрицательных элементов массива
+
+# from random import randint
+# from math import fabs
+# n=12
+# a=[randint(-9,10) for i in range(n)]
+# print(a)
+# sum, sum1 = 0, 0
+# for i in a:
+#     #print(i)
+#     if i >= 0:
+#         sum += i
+# else: 
+#     sum1 = abs(i + sum1)
+# print(sum, sum1)
+
+
+
+
 # 34. Написать программу замену элементов массива на противоположные
+
+# from random import randint
+# a=[randint(-12,12) for i in range(10)]
+# print(a)
+# for i in a:
+#     print(i*-1, end = " ")
+
+# lis = range(8)
+# lit = list(lis)
+# for i in lit:
+#     print(i*-1)
+# print(lit)
+
+
+
+
 # 35. Определить, присутствует ли в заданном массиве, некоторое число
+
+# from random import randint
+
+# k = int(input('Enter k: '))
+# a=[randint(1,12) for i in range(10)]
+# print(a)
+# print(k in a)
+
+
+
+
 # 36. Задать массив, заполнить случайными положительными трёхзначными числами. Показать количество нечетных\четных чисел
+
+# from random import randint
+
+# a = [randint(100, 1000) for i in range(15)]
+# print(a)
+# sum, sum1 = 0, 0
+# for i in a:
+#     if i % 2 == 0:
+#         sum = sum + 1
+#     else:
+#         sum1 = sum1 + 1
+# print(f'четных = {sum}, нечетных = {sum1}')
+
+
+
+
 # 37. В одномерном массиве из 123 чисел найти количество элементов из отрезка [10,99]
+
+# from random import randint
+
+# a = [randint(1, 150) for i in range(123)]
+# print(a)
+# sum = 0
+# for i in a:
+#     if 10 < i < 100:
+#         sum = sum + 1
+# print(sum)
+
+
+
+
 # 38. Найти сумму чисел одномерного массива стоящих на нечетной позиции
+
+# from random import randint
+
+# a = [randint(1, 5) for i in range(10)]
+# print(a)
+# sum = 0
+# for i in a[1:: 2]:  
+#     sum = i + sum
+# print(sum)
+
+
+
+
 # 39. Найти произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+
+# from random import randint
+
+# a = [randint(1, 5) for i in range(12)]
+# print(a)
+# k = 0
+# for i in a:
+#     if k < len(a)//2:
+#         c1 = i * a[len(a) - k - 1] 
+#         print(f'{i} * {a[len(a) - k - 1]} = {c1}')
+#     k = k + 1
+        
+        
+
+
 # 40. В Указанном массиве вещественных чисел найдите разницу между максимальным и минимальным элементом
+
+# from random import randint
+
+# a = [randint(1, 200) for i in range(12)]
+# print(a)
+# print(f' min = {min(a)}, max = {max(a)}; delta = {max(a) - min(a)}')
+
+
+
 
 # ## Почувствуй себя лидом
 # 41. Выяснить являются ли три числа сторонами треугольника
