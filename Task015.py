@@ -10,5 +10,6 @@ for i in range(n):
     mul = a.append(a[i] * z)
     z += 1
 
-del a[0] 
+del a[0]
+ 
 print(a)
